@@ -3,5 +3,10 @@ python:
     - "3.6"
 before_install:
     - pip install pytest pytest-cov
+    - pip install codecov
 script:
-    - pytest
+    - pytest --cov=./
+after_success:
+    - codecov
+env:
+    - CODECOV_TOKEN="254846f1-cfff-44e0-90ab-d1f96f0cf8b1"
